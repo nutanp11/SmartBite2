@@ -3,6 +3,7 @@ import {
   CommonActions,
   StackActions,
 } from '@react-navigation/native';
+import { Dimensions } from 'react-native';
 
 export const navigationRef = createNavigationContainerRef();
 
