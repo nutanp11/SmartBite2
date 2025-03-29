@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator<StackParamList>();
 
 const StackNavigator: React.FC = () => {
   return (
-    <Stack.Navigator initialRouteName="SignIn">
+    <Stack.Navigator initialRouteName="Dashboard">
       <Stack.Screen
         name="SignIn"
         component={SignIn}

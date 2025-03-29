@@ -4,7 +4,6 @@ import {
     StyleSheet,
     Text,
     View,
-    Image,
     ScrollView,
     TextStyle,
     ViewStyle,
@@ -20,11 +19,8 @@ import AppButton from '../../components/AppButton';
 import TextInputComp from '../../components/TextInputComp';
 import HeaderText from '../../components/HeaderText';
 import {
-    CREATE_ACCOUNT,
     ENTER_EMAIL,
-    ENTER_INFO,
     LOG_IN,
-    NEW_USER,
     PASSWORD,
 } from '../../constants/Strings';
 import { width } from '../../utils/comman';
@@ -57,7 +53,7 @@ const SignIn: React.FC<SignInProps> = ({ navigation }) => {
         const isValid = validateForm();
         if (isValid) {
             Alert.alert('Form Submitted', 'Your email and password are valid.');
-            navigation.navigate('ScreenA');
+            navigation.navigate('Dashboard');
         } else {
             Alert.alert('Validation Failed', 'Please fill in all fields correctly.');
         }
@@ -68,9 +64,9 @@ const SignIn: React.FC<SignInProps> = ({ navigation }) => {
             <View style={styles.container}>
                 <View style={styles.topview}>
                     <View >
-                        <ImageBackground style={{ width: width, height: width / 1.2,alignItems:"center",justifyContent:"center",
-                             borderBottomLeftRadius: 10, alignSelf: 'center' }} resizeMode='cover' source={{ uri: "https://th.bing.com/th/id/OIP.QRlnlD0sHv_Ii_ExO3QwhwHaEo?w=316&h=197&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" }} >
-                        <HeaderText title={'SmartBite'} />
+                        <ImageBackground style={{ width: width, height: width / 1.2,
+                             borderBottomLeftRadius: 10, alignSelf: 'center',top:-10 }} resizeMode='stretch' source={{ uri: "https://th.bing.com/th/id/OIP.OHv_QRoJDtQwoqYTrkKEmwHaE6?w=277&h=184&c=7&r=0&o=5&dpr=1.5&pid=1.7" }} >
+                        <HeaderText customStyle={{color: Colors.white, top:40, fontSize:38}} title={'SmartBite'} />
 
                         </ImageBackground>
 
@@ -78,8 +74,9 @@ const SignIn: React.FC<SignInProps> = ({ navigation }) => {
 
                     </View>
 
-                    <View style={{  justifyContent:"space-around",top:20
+                    <View style={{  justifyContent:"space-around",
  }}>
+                        <HeaderText customStyle={{color: Colors.black,marginVertical:10,  fontSize:32}} title={'Login'} />
 
                         <TextInputComp
                             value={email}
@@ -122,6 +119,7 @@ const styles = StyleSheet.create({
     } as ViewStyle,
     loginText: {
         fontSize: 26,
+        top:10,
         fontWeight: '900',
         fontFamily: Fonts.bold,
         alignSelf: 'center',

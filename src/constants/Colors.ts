@@ -24,7 +24,7 @@ export const Colors = {
     successGreenBackground: '#EEFFDE',
     darkGreen: '#002C00',
     textGray: '#999999',
-    appTheme: '#2F2E41',
+    appTheme: '#DE4B4C',
     grayBack: '#F4F4F4',
     extrablack: '#000000',
     tabBackground: '#F2F5FD',
