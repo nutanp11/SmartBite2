@@ -16,7 +16,7 @@ const HorizontalFlatList = ({onPress}) => {
 
 
   const renderItem: React.FC = ({ item }) => (
-    <TouchableOpacity onPress={()=> onPress(item)} style={styles.item} >
+    <TouchableOpacity onPress={()=> onPress(item?.id)} style={styles.item} >
       <Image style={{ width: 80, borderRadius: 15, height: 80 }} source={{ uri: item.link }} />
       <Text style={styles.itemText}>{item.title}</Text>
     </TouchableOpacity>
