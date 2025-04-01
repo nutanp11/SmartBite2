@@ -1,4 +1,3 @@
-//SignIn.tsx
 /* eslint-disable react-native/no-inline-styles */
 import {
     StyleSheet,
@@ -15,7 +14,6 @@ import React, { useState } from 'react';
 import { Colors } from '../../constants/Colors';
 import { Fonts } from '../../constants/Fonts';
 import AppButton from '../../components/AppButton';
-
 import TextInputComp from '../../components/TextInputComp';
 import HeaderText from '../../components/HeaderText';
 import {
@@ -35,67 +33,102 @@ type SignInProps = {
 
 const SignIn: React.FC<SignInProps> = ({ navigation }) => {
     const [email, setEmail] = useState<string>('');
-
     const [password, setPassword] = useState<string>('');
+    const [emailError, setEmailError] = useState<string>('');
+    const [passwordError, setPasswordError] = useState<string>('');
 
-    const validateForm = () => {
-        let isValid = true;
-        if (email.trim() === '') {
-            isValid = false;
+ 
+    const validateEmail = (email: string) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email.trim()) {
+            return 'Email is required';
+        } else if (!emailRegex.test(email)) {
+            return 'Please enter a valid email';
         }
-        if (password.trim() === '') {
-            isValid = false;
+        return '';
+    };
+
+    const validatePassword = (password: string) => {
+        if (!password.trim()) {
+            return 'Password is required';
+        } else if (password.length < 6) {
+            return 'Password must be at least 6 characters';
         }
-        return isValid;
+        return '';
+    };
+
+    const handleEmailChange = (text: string) => {
+        setEmail(text);
+        const error = validateEmail(text);
+        setEmailError(error);
+    };
+
+    const handlePasswordChange = (text: string) => {
+        setPassword(text);
+        const error = validatePassword(text);
+        setPasswordError(error);
     };
 
     const onPressLogin = () => {
-        const isValid = validateForm();
-        if (isValid) {
-            Alert.alert('Form Submitted', 'Your email and password are valid.');
+        const emailError = validateEmail(email);
+        const passwordError = validatePassword(password);
+
+        setEmailError(emailError);
+        setPasswordError(passwordError);
+
+        if (!emailError && !passwordError) {
             navigation.navigate('Dashboard');
-        } else {
-            Alert.alert('Validation Failed', 'Please fill in all fields correctly.');
-        }
+        } 
     };
 
     return (
         <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
             <View style={styles.container}>
                 <View style={styles.topview}>
-                    <View >
-                        <ImageBackground style={{ width: width, height: width / 1.2,
-                             borderBottomLeftRadius: 10, alignSelf: 'center',top:-10 }} resizeMode='stretch' source={{ uri: "https://th.bing.com/th/id/OIP.OHv_QRoJDtQwoqYTrkKEmwHaE6?w=277&h=184&c=7&r=0&o=5&dpr=1.5&pid=1.7" }} >
-                        <HeaderText customStyle={{color: Colors.white, top:40, fontSize:38}} title={'SmartBite'} />
-
+                    <View>
+                        <ImageBackground
+                            style={{
+                                width: width,
+                                height: width / 1.2,
+                                borderBottomLeftRadius: 10,
+                                alignSelf: 'center',
+                                top: -10,
+                            }}
+                            resizeMode="stretch"
+                            source={{
+                                uri: 'https://th.bing.com/th/id/OIP.OHv_QRoJDtQwoqYTrkKEmwHaE6?w=277&h=184&c=7&r=0&o=5&dpr=1.5&pid=1.7',
+                            }}
+                        >
+                            <HeaderText customStyle={{ color: Colors.white, top: 40, fontSize: 38 }} title={'SmartBite'} />
                         </ImageBackground>
 
                         <Text style={styles.loginText}>India's #1 Food Delivery and Dining App</Text>
-
                     </View>
 
-                    <View style={{  justifyContent:"space-around",
- }}>
-                        <HeaderText customStyle={{color: Colors.black,marginVertical:10,  fontSize:32}} title={'Login'} />
+                    <View style={{ justifyContent: 'space-around' }}>
+                        <HeaderText customStyle={{ color: Colors.black, marginVertical: 10, fontSize: 32 }} title={'SignIn'} />
 
                         <TextInputComp
                             value={email}
                             placeholderText={ENTER_EMAIL}
-                            onChangeText={(text: string) => setEmail(text)}
+                            onChangeText={handleEmailChange}
+                            onBlur={() => setEmailError(validateEmail(email))}
                         />
+                        {emailError ? <Text style={styles.errorText}>{emailError}</Text> : null}
 
                         <TextInputComp
                             value={password}
                             placeholderText={PASSWORD}
-                            onChangeText={(text: string) => setPassword(text)}
+                            onChangeText={handlePasswordChange}
+                            onBlur={() => setPasswordError(validatePassword(password))}
+                            secureTextEntry
                         />
+                        {passwordError ? <Text style={styles.errorText}>{passwordError}</Text> : null}
                     </View>
-
                 </View>
 
                 <View style={styles.bottomview}>
                     <AppButton onPress={onPressLogin} title={LOG_IN} />
-
                 </View>
             </View>
         </ScrollView>
@@ -108,6 +141,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: Colors.appBackground,
+        paddingHorizontal:5
     } as ViewStyle,
     topview: {
         flex: 0.8,
@@ -119,13 +153,12 @@ const styles = StyleSheet.create({
     } as ViewStyle,
     loginText: {
         fontSize: 26,
-        top:10,
+        top: 10,
         fontWeight: '900',
         fontFamily: Fonts.bold,
         alignSelf: 'center',
-        textAlign: "center",
+        textAlign: 'center',
         width: '80%',
-
     } as TextStyle,
     subtext: {
         fontSize: 14,
@@ -156,4 +189,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignSelf: 'center',
     } as ViewStyle,
+    errorText: {
+        color: 'red',
+        fontSize: 14,
+        marginTop: 5,
+        fontFamily: Fonts.regular,
+    } as TextStyle,
 });

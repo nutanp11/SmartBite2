@@ -4,8 +4,7 @@ import { StyleSheet, View, Platform } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Icon from 'react-native-vector-icons/AntDesign';
-import Notification from '../Notification';
-import Search from '../Search';
+
 import Dilevery from './delivery';
 import Dining from './dining';
 
@@ -15,61 +14,23 @@ const Dashboard = () => {
   // TabIcon Component
   const TabIcon1 = ({ focused }) => (
     <View style={styles.iconView}>
-      {focused ? (
-        <View style={styles.viewStyle}>
-          <Icon name="search1" size={25} color={focused ? '#ffffff' : '#ffff'} />
-        </View>
-      ) : (
-        <Icon name="search1" size={25} color={focused ? '#ffffff' : '#ffff'} />
-      )}
+        <Icon name="search1" size={25} />
     </View>
   );
 
   const TabIcon2 = ({ focused }) => (
-    <View style={styles.iconView}>
-      {focused ? (
-        <View style={styles.viewStyle}>
-          <Icon name="bells" size={25} color={focused ? '#ffffff' : '#ffff'} />
-        </View>
-      ) : (
-        <Icon name="bells" size={25} color={focused ? '#ffffff' : '#ffff'} />
-      )}
-    </View>
-  );
-
-  const TabIcon3 = ({ focused }) => (
-    <View style={styles.iconView}>
-      {focused ? (
-        <View style={styles.viewStyle}>
-          <Icon name="creditcard" size={30} color={focused ? '#ffffff' : '#fff'} />
-        </View>
-      ) : (
-        <Icon name="creditcard" size={25} color={focused ? '#ffffff' : '#ffff'} />
-      )}
-    </View>
-  );
-
-  const TabIcon4 = ({ focused }) => (
-    <View style={styles.iconView}>
-      {focused ? (
-        <View style={styles.viewStyle}>
-          <Icon name="home" size={25} color={focused ? '#ffffff' : '#ffff'} />
-        </View>
-      ) : (
-        <Icon name="home" size={25} color={focused ? '#ffffff' : '#ffff'} />
-      )}
+    <View style={styles.iconView}>    
+        <Icon name="bells" size={25}/>
     </View>
   );
 
   return (
     <Tab.Navigator
       initialRouteName="Dilevery"
-     
     >
       <Tab.Screen
         name="Dilevery"
         component={Dilevery}
-        
         options={{
           headerShown:false,
           tabBarIcon: ({ focused }) => <TabIcon1 focused={focused} />,

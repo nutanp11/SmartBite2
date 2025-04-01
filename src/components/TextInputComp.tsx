@@ -1,17 +1,27 @@
-import { StyleSheet, TextInput, TextInputProps, View} from 'react-native';
+import { StyleSheet, TextInput, TextInputProps, View } from 'react-native';
 import React from 'react';
-import {Colors} from '../constants/Colors';
-import {Fonts} from '../constants/Fonts';
+import { Colors } from '../constants/Colors';
+import { Fonts } from '../constants/Fonts';
 
 type TextInputCompProps = {
-  value: string
+  value: string;
   placeholderText: string;
   onChangeText: (text: string) => void;
   customInputStyle?: object;
   keyboardType?: TextInputProps['keyboardType'];
+  onBlur?: () => void;
+  secureTextEntry?: boolean
 };
 
-const TextInputComp = ({value, placeholderText, onChangeText, customInputStyle , keyboardType = 'default'}: TextInputCompProps) => {
+const TextInputComp = ({
+  value,
+  placeholderText,
+  onChangeText,
+  customInputStyle,
+  keyboardType = 'default',
+  onBlur,
+  secureTextEntry
+}: TextInputCompProps) => {
   return (
     <View style={[styles.backStyle, customInputStyle]}>
       <TextInput
@@ -19,8 +29,10 @@ const TextInputComp = ({value, placeholderText, onChangeText, customInputStyle ,
         placeholderTextColor={Colors.extrablack}
         style={styles.btnstyle}
         onChangeText={text => onChangeText(text)}
-        keyboardType= {keyboardType}
+        keyboardType={keyboardType}
         value={value}
+        onBlur={onBlur}
+        secureTextEntry={secureTextEntry}
       />
     </View>
   );
@@ -33,7 +45,7 @@ const styles = StyleSheet.create({
     padding: 5,
     borderRadius: 5,
     backgroundColor: Colors.grayBack,
-    width: '90%',
+    width: '100%',
     alignSelf: 'center',
     marginVertical: 10,
   },
