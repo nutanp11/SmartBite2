@@ -37,25 +37,26 @@ const RestaurantComponent: React.FC = () => {
   // Function to handle category selection
   const handleCategoryChange = (categoryId: string) => {
     setSelectedCategory(categoryId);
+    console.log("gdgdgddg", categoryId);
+    
   };
 
-  // Filter restaurants whenever category changes
-  // useEffect(() => {
-  //   if (selectedCategory === '') {
-  //     // If no category is selected, show all restaurants
-  //     setFilteredRestaurants(restaurantData.restaurants);
-  //   } else {
-  //     // Otherwise, filter restaurants based on category id
-  //     const category = restaurant.categories.find(
-  //       (cat) => cat.id === parseInt(selectedCategory)
-  //     );
-  //     if (category) {
-  //       setFilteredRestaurants(category.restaurants);
-  //     } else {
-  //       setFilteredRestaurants([]);
-  //     }
-  //   }
-  // }, [selectedCategory]);
+  useEffect(() => {
+    if (selectedCategory === '') {
+      setFilteredRestaurants(restaurantData.restaurants);
+    } else {
+      const category = restaurant.categories.find(
+        (cat) => cat.id === parseInt(selectedCategory)
+      );
+      if (category) {
+        console.log("category", category);
+        
+       setFilteredRestaurants(category?.restaurants);
+      } else {
+       setFilteredRestaurants([]);
+      }
+    }
+  }, [selectedCategory]);
 
   const addItem = (item: any) => {
     dispatch(addCartItem(item));
@@ -69,7 +70,6 @@ const RestaurantComponent: React.FC = () => {
           resizeMode="cover"
           style={{ width: width - 22, borderRadius: 20, height: width / 2, backgroundColor: 'red' }}
         />
-        <Text>{selectedCategory}</Text>
         <View style={{ flexDirection: 'row', width: '100%', alignItems: 'center' }}>
           <View style={{ width: '85%' }}>
             <Text style={{ fontSize: 20, fontWeight: 'bold' }}>{item.name}</Text>
@@ -97,7 +97,7 @@ const RestaurantComponent: React.FC = () => {
             color: Colors.appTheme,
           }}
         >
-          Restaurants delivering to you
+         {filteredRestaurants.length} Restaurants delivering to you
         </Text>
         <FlatList
           data={filteredRestaurants}

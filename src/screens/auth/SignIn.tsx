@@ -76,9 +76,9 @@ const SignIn: React.FC<SignInProps> = ({ navigation }) => {
         setEmailError(emailError);
         setPasswordError(passwordError);
 
-        if (!emailError && !passwordError) {
+        // if (!emailError && !passwordError) {
             navigation.navigate('Dashboard');
-        } 
+        // } 
     };
 
     return (

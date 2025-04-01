@@ -1,7 +1,6 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SignIn from '../screens/auth/SignIn';
-import Dashboard from '../screens/dashboard';
 import RestarantDetails from '../screens/dashboard/delivery/RestarantDetails';
 
 export type StackParamList = {
@@ -14,7 +13,7 @@ const Stack = createNativeStackNavigator<StackParamList>();
 
 const StackNavigator: React.FC = () => {
   return (
-    <Stack.Navigator initialRouteName="Dashboard">
+    <Stack.Navigator initialRouteName="SignIn">
       <Stack.Screen
         name="SignIn"
         component={SignIn}
