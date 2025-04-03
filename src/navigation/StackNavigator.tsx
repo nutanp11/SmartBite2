@@ -2,6 +2,7 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SignIn from '../screens/auth/SignIn';
 import RestarantDetails from '../screens/dashboard/delivery/RestarantDetails';
+import Dashboard from '../screens/dashboard';
 
 export type StackParamList = {
   SignIn: undefined;

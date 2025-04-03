@@ -1,5 +1,6 @@
 export const Colors = {
     appBackground: '#ffffff',
+    appgrey: '#f5f5f5',
     navyBlue: '#274d76',
     darkGrey: '#333333',
     grey: '#999b9d',
@@ -29,6 +30,6 @@ export const Colors = {
     extrablack: '#000000',
     tabBackground: '#F2F5FD',
     borderColor: '#F0F3FB',
-    appDarkTheme: '#100F18'
+    appDarkTheme: '#BD4141'
   };
  
