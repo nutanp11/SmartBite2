@@ -58,19 +58,19 @@ const RestaurantComponent: React.FC = () => {
     }
   }, [selectedCategory]);
 
-  // const handleSearch = (text: string) => {
-  //   setSearchValue(text);
+  const handleSearch = (text: string) => {
+    // setSearchValue(text);
 
-  //   if (text.trim() === '') {
-  //     setFilteredRestaurants(restaurant.categories[0].restaurants); // Reset if search is cleared
-  //   } else {
-  //     const filtered = restaurant.categories[0].restaurants.filter(restaurant => 
-  //       restaurant.name.toLowerCase().includes(text.toLowerCase()) || 
-  //       restaurant.menu.some(item => item.name.toLowerCase().includes(text.toLowerCase()))
-  //     );
-  //     setFilteredRestaurants(filtered);
-  //   }
-  // };
+    // if (text.trim() === '') {
+    //   setFilteredRestaurants(restaurant.categories[0].restaurants); // Reset if search is cleared
+    // } else {
+    //   const filtered = restaurant.categories[0].restaurants.filter(restaurant => 
+    //     restaurant.name.toLowerCase().includes(text.toLowerCase()) || 
+    //     restaurant.menu.some(item => item.name.toLowerCase().includes(text.toLowerCase()))
+    //   );
+    //   setFilteredRestaurants(filtered);
+    // }
+  };
   
 
   const addItem = (item: any) => {
