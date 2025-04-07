@@ -8,17 +8,29 @@ type Restaurant = {
   id: string;
   title: string;
   link: string;
-  restaurants: Object;
 };
 
-const HorizontalFlatList = ({onPress}) => {
+type HorizontalFlatListProps = {
+  onPress: (id: string) => void;
+  selectedValue: string;
+};
+
+const HorizontalFlatList: React.FC<HorizontalFlatListProps> = ({ onPress, selectedValue }) => {
   const [categories, setCategories] = useState<Restaurant[]>(restaurant.categories);
 
+  console.log("Selected Value: ", selectedValue);
 
-  const renderItem: React.FC = ({ item }) => (
-    <TouchableOpacity onPress={()=> onPress(item?.id)} style={styles.item} >
+  const renderItem = ({ item }: { item: Restaurant }) => (
+    <TouchableOpacity onPress={() => onPress(item.id)} style={styles.item}>
       <Image style={{ width: 80, borderRadius: 15, height: 80 }} source={{ uri: item.link }} />
-      <Text style={styles.itemText}>{item.title}</Text>
+      <Text style={{
+        fontSize: 16,
+        fontWeight: 'bold',
+        marginVertical: 10,
+        color: item.id === selectedValue ? Colors.appTheme : Colors.black
+      }}>
+        {item.title}
+      </Text>
     </TouchableOpacity>
   );
 
@@ -37,7 +49,7 @@ const HorizontalFlatList = ({onPress}) => {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+    flex: 1,
   },
   item: {
     marginRight: 5,
@@ -46,12 +58,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     alignItems: 'center',
     justifyContent: "space-between",
-    flexDirection: "column"
+    flexDirection: "column",
   },
   itemText: {
     fontSize: 16,
     fontWeight: 'bold',
-    marginVertical: 10
+    marginVertical: 10,
   },
 });
 

@@ -43,7 +43,6 @@ describe('SignIn Component', () => {
     fireEvent.press(getByText(LOG_IN));
 
     await waitFor(() => {
-      // Expect the navigation function to be called
       expect(mockNavigate).toHaveBeenCalledWith('Dashboard');
     });
   });

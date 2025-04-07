@@ -51,7 +51,7 @@ const Dashboard = () => {
         }}
       />
       <Tab.Screen
-        name="Dining"
+        name="Cart"
         component={Dining}
         options={{
           tabBarIcon: ({ focused }) => <TabIcon2 focused={focused} />,

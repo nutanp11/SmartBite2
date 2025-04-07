@@ -7,7 +7,6 @@ import {
     TextStyle,
     ViewStyle,
     ImageStyle,
-    Alert,
     ImageBackground,
 } from 'react-native';
 import React, { useState } from 'react';
@@ -53,6 +52,8 @@ const SignIn: React.FC<SignInProps> = ({ navigation }) => {
             return 'Password is required';
         } else if (password.length < 6) {
             return 'Password must be at least 6 characters';
+        } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+            return 'Password must contain at least one special character';
         }
         return '';
     };
@@ -76,9 +77,9 @@ const SignIn: React.FC<SignInProps> = ({ navigation }) => {
         setEmailError(emailError);
         setPasswordError(passwordError);
 
-        // if (!emailError && !passwordError) {
+        if (!emailError && !passwordError) {
             navigation.navigate('Dashboard');
-        // } 
+        } 
     };
 
     return (
@@ -152,7 +153,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     } as ViewStyle,
     loginText: {
-        fontSize: 26,
+        fontSize: 24,
+        opacity:0.7,
         top: 10,
         fontWeight: '900',
         fontFamily: Fonts.bold,

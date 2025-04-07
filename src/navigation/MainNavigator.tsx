@@ -7,11 +7,11 @@ import { Colors } from '../constants/Colors';
 
 const MainNavigator: React.FC = () => {
   return (
-       <SafeAreaView style={styles.container}>
-          <StatusBar barStyle={'dark-content'}></StatusBar>
-    <NavigationContainer>
-        <StackNavigator/>
-    </NavigationContainer>
+    <SafeAreaView style={styles.container}>
+      <StatusBar barStyle={'dark-content'}></StatusBar>
+      <NavigationContainer>
+        <StackNavigator />
+      </NavigationContainer>
     </SafeAreaView>
   );
 };

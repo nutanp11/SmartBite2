@@ -25,7 +25,7 @@ const Delivery: React.FC<HomeProps> = () => {
       <View style={{ flex: 0.1, backgroundColor: Colors.white }}>
         <ProfileInfo />
       </View>
-      <View style={{ flex: 0.9, }}>
+      <View style={{ flex: 0.9}}>
         <Restaruant />
       </View>
     </View>

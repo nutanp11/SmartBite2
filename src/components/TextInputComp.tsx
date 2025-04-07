@@ -26,7 +26,7 @@ const TextInputComp = ({
     <View style={[styles.backStyle, customInputStyle]}>
       <TextInput
         placeholder={placeholderText}
-        placeholderTextColor={Colors.extrablack}
+        placeholderTextColor={Colors.textGray}
         style={styles.btnstyle}
         onChangeText={text => onChangeText(text)}
         keyboardType={keyboardType}

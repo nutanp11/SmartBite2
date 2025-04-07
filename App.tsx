@@ -9,11 +9,9 @@ const App = () => {
   return (
     <Provider store={store}>
     <View style={styles.container}>
-    <SafeAreaView style={styles.container}>
     <MainNavigator/>
-    </SafeAreaView>
     </View>
-     </Provider>
+    </Provider>
   );
 };
 

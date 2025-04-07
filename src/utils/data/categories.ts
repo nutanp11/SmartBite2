@@ -586,30 +586,152 @@ export const restaurant = {
           {
             "id": "r4",
             "categoryId":3,
-            "menu": [
+            "menus": [
               {
-                "id": "1",
-                "name": "Margherita Pizza",
-                "category": "Pizza",
-                "categoryId":3,
-                "price": 12.99,
-                "description":" Slow-cooked mutton pieces, infused with aromatic spices and layered with fluffy basmati rice. Served with a side of cooling raita.",
-                "image": "https://th.bing.com/th/id/OIP.3bPtbcRV9Na2RN27SdOp1gHaI8?w=227&h=274&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2"
+                "section": "Recommended for you",
+                "items": [
+                  {
+                    "id": "1",
+                    "name": "Biryani Pizza",
+                    "category": "Pizza",
+                    "categoryId": 3,
+                    "price": 12.99,
+                    "description": "Slow-cooked mutton pieces, infused with aromatic spices and layered with fluffy basmati rice. Served with a side of cooling raita.",
+                    "image": "https://th.bing.com/th/id/OIP.N_9t_ZqG642avdGrv_GICQHaDX?w=924&h=421&rs=1&pid=ImgDetMain"
+                  },
+                  {
+                    "id": "2",
+                    "name": "Tikka biryani Biryani",
+                    "category": "Pizza",
+                    "categoryId": 3,
+                    "price": 15.99,
+                    "description": "Slow-cooked mutton pieces, infused with aromatic spices and layered with fluffy basmati rice. Served with a side of cooling raita.",
+                    "image": "https://th.bing.com/th/id/OIP.N_9t_ZqG642avdGrv_GICQHaDX?w=924&h=421&rs=1&pid=ImgDetMain"
+                  }
+                ]
               },
               {
-                "id": "2",
-                "name": "Pepperoni Pizza",
-                "category": "Pizza",
-                "price": 15.99,
-                "description":" Slow-cooked mutton pieces, infused with aromatic spices and layered with fluffy basmati rice. Served with a side of cooling raita.",
-                "image": "https://images.unsplash.com/photo-1589935795684-35bfbf87de8b"
+                "section": "Biryani Special",
+                "items": [
+                  {
+                    "id": "1",
+                    "name": "Hydrabadi Biryani ",
+                    "category": "Pizza",
+                    "categoryId": 3,
+                    "price": 12.99,
+                    "description": "Slow-cooked mutton pieces, infused with aromatic spices and layered with fluffy basmati rice. Served with a side of cooling raita.",
+                    "image": "https://th.bing.com/th/id/OIP.N_9t_ZqG642avdGrv_GICQHaDX?w=924&h=421&rs=1&pid=ImgDetMain"
+                  },
+                  {
+                    "id": "2",
+                    "name": "Tanduri Kabab ",
+                    "category": "Pizza",
+                    "categoryId": 3,
+                    "price": 15.99,
+                    "description": "Slow-cooked mutton pieces, infused with aromatic spices and layered with fluffy basmati rice. Served with a side of cooling raita.",
+                    "image": "https://th.bing.com/th/id/OIP.N_9t_ZqG642avdGrv_GICQHaDX?w=924&h=421&rs=1&pid=ImgDetMain"
+                  },
+                  {
+                    "id": "3",
+                    "name": "Biryani Pizza",
+                    "category": "Pizza",
+                    "categoryId": 3,
+                    "price": 12.99,
+                    "description": "Slow-cooked mutton pieces, infused with aromatic spices and layered with fluffy basmati rice. Served with a side of cooling raita.",
+                    "image": "https://th.bing.com/th/id/OIP.N_9t_ZqG642avdGrv_GICQHaDX?w=924&h=421&rs=1&pid=ImgDetMain"
+                  },
+                  {
+                    "id": "4",
+                    "name": "123 Biryani Pizza",
+                    "category": "Pizza",
+                    "categoryId": 3,
+                    "price": 15.99,
+                    "description": "Slow-cooked mutton pieces, infused with aromatic spices and layered with fluffy basmati rice. Served with a side of cooling raita.",
+                    "image": "https://th.bing.com/th/id/OIP.N_9t_ZqG642avdGrv_GICQHaDX?w=924&h=421&rs=1&pid=ImgDetMain"
+                  }
+                ]
               },
               {
-                "id": "3",
-                "name": "Pasta Alfredo",
-                "category": "Pasta",
-                "price": 13.99,
-                "image": "https://images.unsplash.com/photo-1561601498-c9b88c5c40b3"
+                "section": "Manchurian Special",
+                "items": [
+                  {
+                    "id": "1",
+                    "name": "Hydrabadi Biryani ",
+                    "category": "Pizza",
+                    "categoryId": 3,
+                    "price": 12.99,
+                    "description": "Slow-cooked mutton pieces, infused with aromatic spices and layered with fluffy basmati rice. Served with a side of cooling raita.",
+                    "image": "https://th.bing.com/th/id/OIP.N_9t_ZqG642avdGrv_GICQHaDX?w=924&h=421&rs=1&pid=ImgDetMain"
+                  },
+                  {
+                    "id": "2",
+                    "name": "Tanduri Kabab ",
+                    "category": "Pizza",
+                    "categoryId": 3,
+                    "price": 15.99,
+                    "description": "Slow-cooked mutton pieces, infused with aromatic spices and layered with fluffy basmati rice. Served with a side of cooling raita.",
+                    "image": "https://th.bing.com/th/id/OIP.N_9t_ZqG642avdGrv_GICQHaDX?w=924&h=421&rs=1&pid=ImgDetMain"
+                  },
+                  {
+                    "id": "3",
+                    "name": "Biryani Pizza",
+                    "category": "Pizza",
+                    "categoryId": 3,
+                    "price": 12.99,
+                    "description": "Slow-cooked mutton pieces, infused with aromatic spices and layered with fluffy basmati rice. Served with a side of cooling raita.",
+                    "image": "https://th.bing.com/th/id/OIP.N_9t_ZqG642avdGrv_GICQHaDX?w=924&h=421&rs=1&pid=ImgDetMain"
+                  },
+                  {
+                    "id": "4",
+                    "name": "123 Biryani Pizza",
+                    "category": "Pizza",
+                    "categoryId": 3,
+                    "price": 15.99,
+                    "description": "Slow-cooked mutton pieces, infused with aromatic spices and layered with fluffy basmati rice. Served with a side of cooling raita.",
+                    "image": "https://th.bing.com/th/id/OIP.N_9t_ZqG642avdGrv_GICQHaDX?w=924&h=421&rs=1&pid=ImgDetMain"
+                  }
+                ]
+              },
+              {
+                "section": "Soup ",
+                "items": [
+                  {
+                    "id": "1",
+                    "name": "Soup Hydrabadi Biryani ",
+                    "category": "Pizza",
+                    "categoryId": 3,
+                    "price": 12.99,
+                    "description": "Slow-cooked mutton pieces, infused with aromatic spices and layered with fluffy basmati rice. Served with a side of cooling raita.",
+                    "image": "https://th.bing.com/th/id/OIP.N_9t_ZqG642avdGrv_GICQHaDX?w=924&h=421&rs=1&pid=ImgDetMain"
+                  },
+                  {
+                    "id": "2",
+                    "name": "Soup Tanduri Kabab ",
+                    "category": "Pizza",
+                    "categoryId": 3,
+                    "price": 15.99,
+                    "description": "Slow-cooked mutton pieces, infused with aromatic spices and layered with fluffy basmati rice. Served with a side of cooling raita.",
+                    "image": "https://th.bing.com/th/id/OIP.N_9t_ZqG642avdGrv_GICQHaDX?w=924&h=421&rs=1&pid=ImgDetMain"
+                  },
+                  {
+                    "id": "3",
+                    "name": "Biryani Pizza",
+                    "category": "Pizza",
+                    "categoryId": 3,
+                    "price": 12.99,
+                    "description": "Slow-cooked mutton pieces, infused with aromatic spices and layered with fluffy basmati rice. Served with a side of cooling raita.",
+                    "image": "https://th.bing.com/th/id/OIP.N_9t_ZqG642avdGrv_GICQHaDX?w=924&h=421&rs=1&pid=ImgDetMain"
+                  },
+                  {
+                    "id": "4",
+                    "name": "123 Biryani Pizza",
+                    "category": "Pizza",
+                    "categoryId": 3,
+                    "price": 15.99,
+                    "description": "Slow-cooked mutton pieces, infused with aromatic spices and layered with fluffy basmati rice. Served with a side of cooling raita.",
+                    "image": "https://th.bing.com/th/id/OIP.N_9t_ZqG642avdGrv_GICQHaDX?w=924&h=421&rs=1&pid=ImgDetMain"
+                  }
+                ]
               }
             ],
             "name": "Hyderabadi Biryani House",
