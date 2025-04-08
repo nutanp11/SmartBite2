@@ -39,24 +39,6 @@ export const restaurant = {
           "section": "Pizza",
           "items": [
             {
-              "id": "1",
-              "name": "Biryani Pizza",
-              "category": "Pizza",
-              "categoryId": 3,
-              "price": 12.99,
-              "description": "Slow-cooked mutton pieces, infused with aromatic spices and layered with fluffy basmati rice. Served with a side of cooling raita.",
-              "image": "https://th.bing.com/th/id/OIP.N_9t_ZqG642avdGrv_GICQHaDX?w=924&h=421&rs=1&pid=ImgDetMain"
-            },
-            {
-              "id": "2",
-              "name": "Tanduri Biryani Pizza",
-              "category": "Pizza",
-              "categoryId": 3,
-              "price": 15.99,
-              "description": "Slow-cooked mutton pieces, infused with aromatic spices and layered with fluffy basmati rice. Served with a side of cooling raita.",
-              "image": "https://th.bing.com/th/id/OIP.N_9t_ZqG642avdGrv_GICQHaDX?w=924&h=421&rs=1&pid=ImgDetMain"
-            },
-            {
               "id": "3",
               "name": "Biryani Pizza",
               "category": "Pizza",
@@ -67,6 +49,24 @@ export const restaurant = {
             },
             {
               "id": "4",
+              "name": "Tanduri Biryani Pizza",
+              "category": "Pizza",
+              "categoryId": 3,
+              "price": 15.99,
+              "description": "Slow-cooked mutton pieces, infused with aromatic spices and layered with fluffy basmati rice. Served with a side of cooling raita.",
+              "image": "https://th.bing.com/th/id/OIP.N_9t_ZqG642avdGrv_GICQHaDX?w=924&h=421&rs=1&pid=ImgDetMain"
+            },
+            {
+              "id": "5",
+              "name": "Biryani Pizza",
+              "category": "Pizza",
+              "categoryId": 3,
+              "price": 12.99,
+              "description": "Slow-cooked mutton pieces, infused with aromatic spices and layered with fluffy basmati rice. Served with a side of cooling raita.",
+              "image": "https://th.bing.com/th/id/OIP.N_9t_ZqG642avdGrv_GICQHaDX?w=924&h=421&rs=1&pid=ImgDetMain"
+            },
+            {
+              "id": "6",
               "name": "123 Biryani Pizza",
               "category": "Pizza",
               "categoryId": 3,
@@ -80,7 +80,7 @@ export const restaurant = {
           "section": "Special Dishes",
           "items": [
             {
-              "id": "1",
+              "id": "7",
               "name": "Biryani Pizza",
               "category": "Pizza",
               "categoryId": 3,
@@ -89,7 +89,7 @@ export const restaurant = {
               "image": "https://th.bing.com/th/id/OIP.N_9t_ZqG642avdGrv_GICQHaDX?w=924&h=421&rs=1&pid=ImgDetMain"
             },
             {
-              "id": "2",
+              "id": "8",
               "name": "Tanduri Biryani Pizza",
               "category": "Pizza",
               "categoryId": 3,
@@ -98,7 +98,7 @@ export const restaurant = {
               "image": "https://th.bing.com/th/id/OIP.N_9t_ZqG642avdGrv_GICQHaDX?w=924&h=421&rs=1&pid=ImgDetMain"
             },
             {
-              "id": "3",
+              "id": "9",
               "name": "Biryani Pizza",
               "category": "Pizza",
               "categoryId": 3,
@@ -107,7 +107,7 @@ export const restaurant = {
               "image": "https://th.bing.com/th/id/OIP.N_9t_ZqG642avdGrv_GICQHaDX?w=924&h=421&rs=1&pid=ImgDetMain"
             },
             {
-              "id": "4",
+              "id": "10",
               "name": "123 Biryani Pizza",
               "category": "Pizza",
               "categoryId": 3,

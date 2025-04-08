@@ -1,13 +1,15 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SignIn from '../screens/auth/SignIn';
-import RestarantDetails from '../screens/dashboard/delivery/RestarantDetails';
+import RestaurantDetails from '../screens/dashboard/delivery/RestaurantDetails';
 import Dashboard from '../screens/dashboard';
+import Cart from '../screens/dashboard/dining';
 
 export type StackParamList = {
   SignIn: undefined;
   Dashboard: undefined;
-  RestarantDetails: undefined
+  RestaurantDetails: { itemData: any }; // Example parameter
+  Cart: undefined
 };
 
 const Stack = createNativeStackNavigator<StackParamList>();
@@ -25,11 +27,15 @@ const StackNavigator: React.FC = () => {
         component={Dashboard}
         options={{ headerShown: false }} />
 
-        <Stack.Screen
-        name="RestarantDetails"
-        component={RestarantDetails}
-        options={{headerShown: false}}
-        />
+       <Stack.Screen
+       name="RestaurantDetails"
+       component={RestaurantDetails}
+       options={{headerShown: false}}/>
+       <Stack.Screen
+       name="Cart"
+       component={Cart}
+       options={{headerShown: false}}/>
+    
     </Stack.Navigator>
   );
 };

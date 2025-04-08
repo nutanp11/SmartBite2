@@ -54,6 +54,7 @@ const Dashboard = () => {
         name="Cart"
         component={Dining}
         options={{
+          headerShown: false,
           tabBarIcon: ({ focused }) => <TabIcon2 focused={focused} />,
           tabBarLabelStyle: { color: Colors.appTheme, fontWeight: '700', fontSize: 12 }
         }}
