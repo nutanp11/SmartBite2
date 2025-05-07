@@ -5,6 +5,7 @@ import { Images } from '../../../assets/images';
 import { Fonts } from '../../../constants/Fonts';
 import { Colors } from '../../../constants/Colors';
 import { WELCOME_TEXT } from '../../../constants/Strings';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const ProfileInfo: React.FC = () => {
   const navigation = useNavigation();  // Get navigation object
@@ -14,17 +15,17 @@ const ProfileInfo: React.FC = () => {
     navigation.openDrawer();
   };
 
+
   return (
     <View style={styles.mainView}>
       <View style={styles.firstView}>
-        <Text style={styles.textStyle}>{WELCOME_TEXT}</Text>
-        <Text style={styles.largeText}>Johnson</Text>
+        <Text style={styles.textStyle}>Pune, Maharashtra</Text>
       </View>
       <TouchableOpacity onPress={openDrawer} style={styles.roundborderview}>
         <View style={styles.imgView}>
-          <Image source={Images.profile} />
+          <Icon name="menu" size={30}/>
         </View>
-      </TouchableOpacity>
+      </TouchableOpacity>45
     </View>
   );
 };
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
     width: '70%',
   },
   textStyle: {
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: '800',
     color: Colors.textGray,
   },
@@ -52,17 +53,16 @@ const styles = StyleSheet.create({
   },
   roundborderview: {
     width: '30%',
-    alignSelf: 'center',
+    alignSelf: 'flex-end',
     padding: 3,
-    alignItems: 'center',
-    justifyContent: 'center',
+    // alignItems: 'center',
+    justifyContent: 'flex-end',
   },
   imgView: {
     alignSelf: 'center',
     padding: 3,
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 2,
-    borderRadius: 50,
+  
   },
 });

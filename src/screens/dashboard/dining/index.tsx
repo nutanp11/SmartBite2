@@ -30,7 +30,7 @@ const Cart = () => {
   };
 
   const getSubTotal = () => {
-    return addedItems.reduce((total, item) => {
+    return addedItems?.reduce((total, item) => {
       const itemPrice = parseFloat(item.price);
       return total + itemPrice * item.quantity;
     }, 0);

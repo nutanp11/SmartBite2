@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Colors } from '../../../constants/Colors';
 import { Fonts } from '../../../constants/Fonts';
 import { useDispatch } from 'react-redux';
@@ -20,7 +20,11 @@ import { restaurant } from '../../../utils/data/categories';
 import Icon from 'react-native-vector-icons/AntDesign';
 import SearchInput from './SearchInput';
 import { useNavigation } from '@react-navigation/native';
-
+const images = [
+  'https://media.geeksforgeeks.org/wp-content/uploads/20240306153044/Unity-Books-For-Game-Development.webp',
+  'https://media.geeksforgeeks.org/wp-content/uploads/20240306152952/What-is-Vizard-AI-and-How-to-Use-it-(1).webp',
+  'https://media.geeksforgeeks.org/wp-content/uploads/20240306150928/community-marketplace.jpg',
+];
 export const width = Dimensions.get('window').width;
 
 type Restaurant = {
@@ -28,7 +32,7 @@ type Restaurant = {
   name: string;
   location: string;
   image: string;
-  categoryId: string; // Assuming each restaurant has a categoryId
+  categoryId: string;
 };
 
 const RestaurantComponent: React.FC = () => {
@@ -85,6 +89,14 @@ const RestaurantComponent: React.FC = () => {
     dispatch(addCartItem(item));
   };
 
+  const renderItem = ({ item, index }) => {
+    return (
+      <View style={styles.slide}>
+        <Image source={{ uri: item }} style={styles.image} />
+      </View>
+    );
+  };
+
   const restaurantItem = ({ item }: { item: Restaurant }) => (
     <TouchableOpacity onPress={() => navigation.navigate('RestaurantDetails', { itemData: item })}>
       <View style={styles.viewStyle}>
@@ -93,6 +105,7 @@ const RestaurantComponent: React.FC = () => {
           resizeMode="cover"
           style={styles.imageBStyle}
         >
+     
           <View style={styles.disView}>
             <Text style={styles.timeStyle}>34 Min</Text>
           </View>
@@ -153,6 +166,20 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.appTheme,
     paddingHorizontal: 14,
     borderTopRightRadius: 10
+  },
+  wrapper: {
+    height: 700,
+  },
+  slide: {
+    width: 300,
+    height: 300,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover',
   },
   timeStyle: {
     fontSize: 14,

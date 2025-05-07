@@ -7,13 +7,14 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import Icon1 from 'react-native-vector-icons/Entypo';
 import Icon2 from 'react-native-vector-icons/MaterialIcons';
 import { useDispatch, useSelector } from 'react-redux';
-import { addCartItem, decreaseQuantity, increaseQuantity, selectTotalPrice, selectTotalQuantity } from '../../../redux/CartSlice';
+import { addCartItem, decreaseQuantity, increaseQuantity } from '../../../redux/CartSlice';
 import { StackParamList } from '../../../navigation/StackNavigator';
 
 interface CartItem {
   id: string;
   title: string;
   image: any;
+  quantity: number
 }
 
 interface RootState {
@@ -27,6 +28,7 @@ interface MenuItem {
   price: string;
   description: string;
   image: string;
+  quantity: number
 }
 
 interface Section {
@@ -57,7 +59,7 @@ const RestaurantDetails: React.FC<RestaurantDetailsProps> = ({ route }) => {
     if (routeD.menus && routeD.menus.length > 0) {
       const firstSection = routeD.menus[0].section;
       setExpandedSections({
-        [firstSection]: true, // Expand the first section by default
+        [firstSection]: true,
       });
     }
   }, [routeD.menus]);
@@ -187,13 +189,13 @@ const RestaurantDetails: React.FC<RestaurantDetailsProps> = ({ route }) => {
         />
       </View>
     </ScrollView>
-   
+   {totalQuantity > 0  &&
      <View style={{padding:10, backgroundColor: Colors.appTheme, alignItems:'center'}}>
       <TouchableOpacity onPress={()=> navigation.navigate('Cart')}>
       <Text style={{color: Colors.white, fontSize:16}}>{totalQuantity} items added</Text>
-      <Text style={{color: Colors.white, fontSize:16, fontWeight:'600'}}>View Cart</Text>
+      <Text style={{color: Colors.white, fontSize:16, fontWeight:'600', textAlign:'center'}}>View Cart</Text>
       </TouchableOpacity>
-     </View>
+     </View>}
      </SafeAreaView>
   );
 };
